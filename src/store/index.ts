@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { rooReducer } from './rootReducer';
+import { rootReducer } from './rootReducer';
 
 export const store = configureStore({
-  reducer: rooReducer,
+  reducer: rootReducer,
   devTools: true,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
+  middleware: getDefaultMiddleware=> getDefaultMiddleware({ serializableCheck: false })
 });
 
-export type State = ReturnType<typeof store.getStore>
+export type State = ReturnType<typeof store.getState>
